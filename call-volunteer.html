@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeNet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/images/SafeNet Logo no bg.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="home.html">
+        <div class="back">
+            <img src="assets/icons/back-button.png" alt="logout" class="back-icon">
+        </div>
+        </a>
+        <div>
+            <img src="assets/images/SafeNet.png" alt="logo" class="logo">
+        </div>
+    </div>
+    <div class="main">
+        <h1 class="title">Call for volunteers</h1>
+
+        <button class="btn" id="openPopup">New</button>
+        <table class="table">
+            <tr>
+                <th>Location</th>
+                <th>Category</th>
+                <th>Count</th>
+                <th></th>
+        
+            </tr>
+            <tr>
+                <td>SafeNet</td>
+                <td>aghoshmohant@gmail.com</td>
+                <td>8590650812</td>
+                <td>
+                    <button class="reject-btn">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="body" id="popupOverlay">
+        <div class="box">
+            <img src="./assets/icons/close.png" alt="" class="close" id="closePopup">
+            <div>
+                <label for="location" class="lab">Location</label>
+                <input type="text" name="location" id="" class="inp">
+            </div>
+            <div>
+                <label for="district" class="lab">District</label>
+                <input type="text" name="district" id="" class="inp">
+            </div>
+            <div>
+                <label for="category" class="lab">Category</label>
+                <input type="text" name="category" id="" class="inp">
+            </div>
+            <div>
+                <label for="count" class="lab">Count</label>
+                <input type="number" name="count" id="" class="inp"> 
+            </div>
+            <div>
+                <button class="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openPopup = document.getElementById("openPopup");
+        const popupOverlay = document.getElementById("popupOverlay");
+        const closePopup = document.getElementById("closePopup");
+
+        openPopup.addEventListener("click", () => {
+            popupOverlay.style.display = "flex"; 
+        });
+
+        closePopup.addEventListener("click", () => {
+            popupOverlay.style.display = "none"; 
+        });
+
+       
+        popupOverlay.addEventListener("click", (event) => {
+            if (event.target === popupOverlay) {
+                popupOverlay.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
